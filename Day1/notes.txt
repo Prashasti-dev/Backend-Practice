@@ -1,0 +1,8 @@
+package-lock.json-->its works is that  the  code which u have written is depended on which package and inke saare codes jaate hain NODE MODULES me
+
+Server??ek machine hoti hai jiske pass khud ka os ,process, ram ,storage hai.
+        ek aise machine jise program kiya gya hai ki user jo bhi request bhejega uska proper response mil sake.
+
+        npm init -y
+
+Express - lets u make server easily
