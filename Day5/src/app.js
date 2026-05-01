@@ -37,7 +37,6 @@ app.patch("/notes/:index", (req,res)=>{
     res.status(200).json({
         message:"notes updated successfully"
     })
-
 })
 
 module.exports=app
