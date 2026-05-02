@@ -2,7 +2,7 @@ const mongoose=require("mongoose")
 
 
 function connectToDB(){
-    mongoose.connect("mongodb+srv://prashasti:RRQ0KFOU8Vxa3FoO@cluster0.0vqyrm1.mongodb.net/day-7")
+    mongoose.connect("Your cluster url")
     .then(()=>{
         console.log("database connected")
     })
