@@ -32,4 +32,15 @@ app.post("/notes", async(req, res)=>{
 })
 
 
+app.get("/notes",async (req,res)=>{
+   const note= await noteModel.find()  //database me saare notes ko return krke note var ke andar save and res me saved 
+   /**find method retrun data in the form  of array of objects */
+
+   res.status(200).json({
+    message:"Notes fetched succesfully",
+    note
+   })
+})
+
+
 module.exports=app
