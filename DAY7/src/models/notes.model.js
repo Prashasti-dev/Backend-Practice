@@ -5,10 +5,7 @@ SCHEMA--structure
 
 new mongoose.Schema()*/
 
-const noteSchema=new mongoose.Schema({
-    title: String,
-    description: String,
-})
+const noteSchema=new mongoose.Schema({  title: String,  description: String,})
 
 /** Create a model  --to perform any operation
  * 
