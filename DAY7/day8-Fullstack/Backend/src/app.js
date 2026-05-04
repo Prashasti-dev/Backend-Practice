@@ -2,12 +2,12 @@
 
 const express=require("express")
 const noteModel=require("./models/note.model")
-
+const cors=require('cors')
 
 const app=express()
+app.use(cors())  //server cross origin request accept krna chaalu kr deta hai
+
 app.use(express.json())  //middleware
-
-
 
 /**
  * -POST /api/notes
@@ -68,5 +68,6 @@ app.patch('/api/notes/:id', async(req,res)=>{
     message:"Note update ho gya hai"
    })
 })
+
 
 module.exports=app
