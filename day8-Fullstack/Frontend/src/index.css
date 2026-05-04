@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+.notes{
+  display: flex;
+  gap: 1rem;
+}
+.note{
+  background-color: rgb(102, 115, 126);
+  width: 20rem;
+  border-radius: 10px;
+  padding-block: 10px;
+  padding-inline:5rem;
+margin: 10px;
+}
