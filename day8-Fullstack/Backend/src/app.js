@@ -3,11 +3,15 @@
 const express=require("express")
 const noteModel=require("./models/note.model")
 const cors=require('cors')
+const path=require('path')
+
 
 const app=express()
 app.use(cors())  //server cross origin request accept krna chaalu kr deta hai
-
 app.use(express.json())  //middleware
+app.use(express.static("./public")) //middleware;  this one makes file (html,css ,js created in public-assets) publically avl. ; if can't handle (apis that were not created )
+// here then goes to wildcard part
+
 
 /**
  * -POST /api/notes
@@ -59,15 +63,21 @@ app.delete('/api/notes/:id', async(req,res)=>{
  */
 
 app.patch('/api/notes/:id', async(req,res)=>{
-    const id= req.params.id
+    const id= req.params.id 
     const {title,description}=req.body
-
 
    await noteModel.findByIdAndUpdate(id, {title,description})
 
    res.status(200).json({
     message:"Note update ho gya hai"
    })
+})
+
+//wildcard route--handle those api which werent handled
+
+app.use('*name',(req,res)=>{
+    // res.send('this is wild card')
+    res.sendFile(path.join(__dirname,".." ,"/public/index.html"))  //__dirname==jis folder me currently hain wahan tk  ka poora path currently mil jaate hai i.e src tk ka
 })
 
 
