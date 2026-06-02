@@ -22,7 +22,8 @@ axios.get('http://localhost:3000/api/notes')
   
 }))
 }
-
+// infinite times app component nhi chlega jb bhi rerender hoga wo
+//ek baar api call honi chahiye
 useEffect(()=>{
   fetchNotes()
 },[])
